@@ -245,8 +245,8 @@ class ProdutoraApp:
             if qtd <= 0:
                 messagebox.showwarning("Aviso", "A quantidade deve ser maior que zero!")
                 return False
-            if qtd % 5 != 0:
-                messagebox.showwarning("Aviso", "A quantidade deve ser divisível por 5!\nExemplo: 5, 10, 15, 20, etc.")
+            if qtd % 15 != 0:
+                messagebox.showwarning("Aviso", "A quantidade deve ser divisível por 15!\nExemplo: 15, 30, 45, 60, etc.")
                 return False
             return True
         except ValueError:
@@ -303,7 +303,7 @@ class ProdutoraApp:
             tempo_espera = 80.2 if opcao == 1 else 60.7
             produto = "pasta base" if opcao == 1 else "cocaína"
             materia_prima = "folhas de coca" if opcao == 1 else "pasta base"
-            numero_producoes = quantidade_total // 5
+            numero_producoes = quantidade_total // 15
             quantidade_produzida = quantidade_total if opcao == 1 else (quantidade_total * 2)
             
             # Cálculo do tempo total estimado
@@ -314,7 +314,7 @@ class ProdutoraApp:
                 # Calcula quantas vezes vai precisar comer/beber
                 intervalo_segundos = intervalo * 60
                 numero_alimentacoes = int(tempo_total_segundos // intervalo_segundos)
-                tempo_total_segundos += (numero_alimentacoes * 30)  # 30 segundos por pausa (15 comer + 15 beber)
+                tempo_total_segundos += (numero_alimentacoes * 30)  # 30 segundos por pausa
             
             # Converte para horas, minutos e segundos
             horas = int(tempo_total_segundos // 3600)
